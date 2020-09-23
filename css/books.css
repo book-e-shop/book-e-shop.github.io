@@ -205,3 +205,12 @@ a.article:hover {
 .sign figcaption {
     margin: 0 auto 5px; /* Отступы вокруг абзаца */
 }
+
+.info_book {
+    text-align: justify;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: black;
+}
