@@ -33,17 +33,17 @@
 
 ## Скриншоты страниц в браузере
 
-<video autoplay muted  src = "videos/1.mp4"></video>
+<video autoplay muted  width="800" height="450" src = "videos/1.mp4"></video>
   
 ## Скриншоты работы в telnet
 
-## Заголовки каждой страницы через HEAD
+### Заголовки каждой страницы через HEAD
 
 ![alt text](img/telnet_head_1.png)
 
 ![alt text](img/telnet_head_2.png)
 
-## Содержимое каждой страницы через GET
+### Содержимое каждой страницы через GET
 
 ![alt text](img/telnet_get_index.png)
 
@@ -51,10 +51,10 @@
 
 ![alt text](img/telnet_get_info_book.png)
 
-## Заголовок и содержимое несуществующей страницы
+### Заголовок и содержимое несуществующей страницы
 
 ![alt text](img/telnet_get_ne.png)
 
-## Отправка POST-запроса на главную страницу
+### Отправка POST-запроса на главную страницу
 
 ![alt text](img/telnet_post.png)
