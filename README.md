@@ -33,7 +33,8 @@
 
 ## Скриншоты страниц в браузере
 
-<video autoplay muted src = "videos/1.mp4">
+<video autoplay muted  src = "videos/1.mp4"></video>
+  
 ## Скриншоты работы в telnet
 
 ## Заголовки каждой страницы через HEAD
