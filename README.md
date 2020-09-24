@@ -14,6 +14,7 @@
 1. При нажатии кнопки "Каталог" на любой из страниц открывается список категорий книг. 
 2. При выборе категории "Все книги" в "Каталоге" открывается список всех книг.
 3. При выборе книги "Агата Кристи. Десять негритят" открывается подробная информация о книге.
+4. При нажатии на надпись "Книжный магазин" открывается главная страница.
 
 ## Сетки страниц
 
@@ -41,25 +42,25 @@
 
 ### Заголовки каждой страницы через HEAD
 
-<img  src = "img/telnet_head_1.png" width="800" height="450"></img>
+<img  src = "img/telnet_head_1.png" width="800" height="450">
 
-<img  src = "img/telnet_head_2.png" width="800" height="450"></img>
+<img  src = "img/telnet_head_2.png" width="800" height="450">
 
 
 ### Содержимое каждой страницы через GET
 
-<img  src = "img/telnet_get_index.png" width="800" height="450"></img>
+<img  src = "img/telnet_get_index.png" width="800" height="450">
 
-<img  src = "img/telnet_get_books.png" width="800" height="450"></img>
+<img  src = "img/telnet_get_books.png" width="800" height="450">
 
-<img  src = "img/telnet_get_info_book.png" width="800" height="450"></img>
+<img  src = "img/telnet_get_info_book.png" width="800" height="450">
 
 
 ### Заголовок и содержимое несуществующей страницы
 
-<img  src = "img/telnet_get_ne.png" width="800" height="450"></img>
+<img  src = "img/telnet_get_ne.png" width="800" height="450">
 
 
 ### Отправка POST-запроса на главную страницу
 
-<img  src = "img/telnet_post.png" width="800" height="450"></img>
+<img  src = "img/telnet_post.png" width="800" height="450">
