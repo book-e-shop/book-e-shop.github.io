@@ -28,6 +28,12 @@ a:focus {
   transition: all 0.3s;
 }
 
+#img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
@@ -39,8 +45,8 @@ a:focus {
   position: fixed;
   height: 100vh;
   z-index: 999;
-  background: #7386d5;
-  color: #fff;
+  background: aliceblue;
+  color: black;
   transition: all 0.3s;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
   left: -250px;
@@ -51,7 +57,6 @@ a:focus {
   height: 35px;
   line-height: 35px;
   text-align: center;
-  background: #7386d5;
   position: absolute;
   top: 10px;
   right: 10px;
@@ -62,8 +67,8 @@ a:focus {
 }
 
 #dismiss:hover {
-  background: #fff;
-  color: #7386d5;
+  background: black;
+  color: white;
 }
 
 .overlay {
@@ -83,16 +88,16 @@ a:focus {
 
 #sidebar .sidebar-header {
   padding: 20px;
-  background: #6d7fcc;
+  background: aliceblue;
 }
 
 #sidebar ul.components {
   padding: 20px 0;
-  border-bottom: 1px solid #47748b;
+  border-bottom: 1px solid aliceblue;
 }
 
 #sidebar ul p {
-  color: #fff;
+  color: black;
   padding: 10px;
 }
 
@@ -103,14 +108,14 @@ a:focus {
 }
 
 #sidebar ul li a:hover {
-  color: #7386d5;
-  background: #fff;
+  color: white;
+  background: black;
 }
 
 #sidebar ul li.active > a,
 a[aria-expanded="true"] {
-  color: #fff;
-  background: #6d7fcc;
+  color: black;
+  background: antiquewhite;
 }
 
 a[data-toggle="collapse"] {
@@ -144,19 +149,20 @@ ul.CTAs a {
 }
 
 a.download {
-  background: #fff;
+  background: black;
   color: #7386d5;
 }
 
 a.article,
 a.article:hover {
   background: #6d7fcc !important;
-  color: #fff !important;
+  color: black !important;
 }
 
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
+
 
 .sign {
   float: right; /* Выравнивание по правому краю */
@@ -167,14 +173,23 @@ a.article:hover {
 }
 
 .sign figcaption {
-    margin: 0 auto 5px; /* Отступы вокруг абзаца */
+  margin: 0 auto 5px; /* Отступы вокруг абзаца */
 }
 
 .info_book {
-    text-align: justify;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1em;
-    font-weight: 300;
-    line-height: 1.7em;
-    color: black;
+  text-align: justify;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.7em;
+  color: black;
+}
+
+.body-content {
+  margin-top: 12vh;
+}
+.footer
+{
+  margin-top: 5vh;
+  background-color: #bdc3c7;
 }
