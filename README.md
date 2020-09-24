@@ -51,8 +51,17 @@
 ![alt text](img/telnet_head_2.png)
 
 ## Содержимое каждой страницы через GET, проверить статус ответа
+
+![alt text](img/telnet_get_index.png)
+
+![alt text](img/telnet_get_books.png)
+
+![alt text](img/telnet_get_info_book.png)
+
 ## Заголовок и содержимое несуществующей страницы, например /any_page.html
+
+![alt text](img/telnet_get_ne.png)
 
 ## Попробовать отправить POST-запрос на главную страницу
 
-
+![alt text](img/telnet_post.png)
