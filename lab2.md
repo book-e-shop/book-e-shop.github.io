@@ -29,7 +29,7 @@
 
 ## Скриншоты страниц в браузере
 
-<video autoplay muted  loop width="800" height="450" src = "lab2/1.mp4"></video> 
+<video autoplay muted  loop width="800" height="450" src = "video/lab2/1.mp4"></video> 
 
 ## Контрольные вопросы
 
