@@ -1,5 +1,8 @@
 # Лабораторная работа №2
 
+## Ссылки
+* https://github.com/book-e-shop/book-e-shop - ссылка на репозиторий 
+* https://github.com/book-e-shop/book-e-shop/blob/master/book_shop.sql - ссылка на дамп базы данных
 ## Use-case авторизации
 
 ### Внешний вид формы логина
