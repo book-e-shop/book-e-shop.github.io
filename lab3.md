@@ -25,7 +25,7 @@
 
 ## Тестовый пример со скриншотом
 
-<img  src = "img/telnet_head_1.png" width="800" height="450">
+<img  src = "img/lab3/1.png" width="800" height="450">
 
 ## PHP-Код, вставленный прямо в протокол
 
@@ -116,4 +116,4 @@ function generate_sitemap()
 
 ## Скринкаст работы решения
 
-<!-- <video autoplay muted  loop width="800" height="450" src = "videos/lab2/1.mp4"></video>
+<!-- <video autoplay muted  loop width="800" height="450" src = "videos/lab3/1.mp4"></video>
