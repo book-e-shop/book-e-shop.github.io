@@ -6,7 +6,7 @@
 
 ### Структура данных
 
-<img  src = "img/lab4/db.png" width="1000" height="600">
+<img  src = "img/lab4/db.png" width="800" height="600">
 
 ### Все модульные сетки
 
@@ -60,9 +60,9 @@
 
 ### Добавление книги
 
-<video autoplay muted  loop width="800" height="450" src = "videos/lab4/1.mp4"></video>
+<video  muted  loop width="800" height="450" src = "videos/lab4/1.mp4"></video>
 
 ### Добавление рецензии
 
-<video autoplay muted  loop width="800" height="450" src = "videos/lab4/2.mp4"></video>
+<video  muted  loop width="800" height="450" src = "videos/lab4/2.mp4"></video>
   
