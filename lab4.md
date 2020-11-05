@@ -6,7 +6,7 @@
 
 ### Структура данных
 
-[//]: <> (<img  src = "img/telnet_head_1.png" width="800" height="450">)
+<img  src = "img/lab4/db.png" width="800" height="450">
 
 ### Все представления
 
@@ -51,5 +51,5 @@
 
 ## Скринкаст
 
-[//]: <> (<video autoplay muted  loop width="800" height="450" src = "videos/1.mp4"></video>)
+<!-- (<video autoplay muted  loop width="800" height="450" src = "videos/1.mp4"></video>) -->
   
