@@ -2,15 +2,7 @@
 
 [Ссылка на github (дамп базы там же)](https://github.com/book-e-shop/book-e-shop)
 
-## Скринкаст
 
-### Добавление книги
-
-<video  muted   width="800" height="450" src = "videos/lab4/1.mp4"></video>
-
-### Добавление рецензии
-
-<video  muted   width="800" height="450" src = "videos/lab4/2.mp4"></video>
 
 ## ТЗ 
 
@@ -66,5 +58,13 @@
 * Проверяется минимальное и максимальное количество введенных символов. 
 * Для проверки кода ISBN выполняется проверка с помощью регулярных выражений.
 
+## Скринкаст
 
+### Добавление книги
+
+<video  muted  controls width="800" height="450" src = "videos/lab4/1.mp4"></video>
+
+### Добавление рецензии
+
+<video  muted controls  width="800" height="450" src = "videos/lab4/2.mp4"></video>
   
