@@ -6,7 +6,7 @@
 
 ### Структура данных
 
-<img  src = "img/lab4/db.png" width="800" height="450">
+<img  src = "img/lab4/db.png" width="1000" height="600">
 
 ### Все представления
 
