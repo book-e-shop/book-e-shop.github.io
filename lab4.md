@@ -6,7 +6,7 @@
 
 ### Структура данных
 
-<img  src = "img/lab4/db.png" width="800" height="600">
+<img  src = "img/lab4/db.png" width="1280" height="720">
 
 ### Все модульные сетки
 
