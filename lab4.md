@@ -2,11 +2,21 @@
 
 [Ссылка на github (дамп базы там же)](https://github.com/book-e-shop/book-e-shop)
 
+## Скринкаст
+
+### Добавление книги
+
+<video  muted   width="800" height="450" src = "videos/lab4/1.mp4"></video>
+
+### Добавление рецензии
+
+<video  muted   width="800" height="450" src = "videos/lab4/2.mp4"></video>
+
 ## ТЗ 
 
 ### Структура данных
 
-<img  src = "img/lab4/db.png" width="800" height="600">
+<img  src = "img/lab4/db.png" width="1280" height="720">
 
 ### Все модульные сетки
 
@@ -56,13 +66,5 @@
 * Проверяется минимальное и максимальное количество введенных символов. 
 * Для проверки кода ISBN выполняется проверка с помощью регулярных выражений.
 
-## Скринкаст
 
-### Добавление книги
-
-<video  muted   width="800" height="450" src = "videos/lab4/1.mp4"></video>
-
-### Добавление рецензии
-
-<video  muted   width="800" height="450" src = "videos/lab4/2.mp4"></video>
   
