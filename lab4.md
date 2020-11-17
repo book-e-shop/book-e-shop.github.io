@@ -1,6 +1,7 @@
 # Лабораторная работа №4
 
-[Ссылка на github (дамп базы там же)](https://github.com/book-e-shop/book-e-shop)
+UPD: Так как лабораторная работа №4 до сих пор не проверена, а в проект вносятся изменения, то прикрепляем ссылку на версию для 4 лаборатоной.
+[Ссылка на github (дамп базы там же)](https://github.com/book-e-shop/book-e-shop/tree/e7eeff1f4d41cc05babb8fc7cdbe6a4c7241f6f5)
 
 
 
