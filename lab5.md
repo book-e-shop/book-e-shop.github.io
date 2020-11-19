@@ -42,3 +42,6 @@
 ### Редактирование и удаление рецензии
 <video  muted controls  width="800" height="450" src = "videos/lab5/rev3.mp4"></video>
 
+### Просмотр рецензий в личном кабинете
+<video  muted controls  width="800" height="450" src = "videos/lab5/rev3.mp4"></video>
+
