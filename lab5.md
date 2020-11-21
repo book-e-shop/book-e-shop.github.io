@@ -1,6 +1,8 @@
 # Лабораторная работа 5. Реализуем интерфейс управления данными. CRUD 2 связанных таблиц полностью
 
-## Структура данных
+[Ссылка на github (дамп базы там же)](https://github.com/book-e-shop/book-e-shop/tree/53692611483e1467218d63ab81dd8dd28bddb040)
+
+## [Структура данных](https://github.com/book-e-shop/book-e-shop.github.io/blob/master/img/lab5/db.png)
 
 <img  src = "img/lab5/db.png">
 
