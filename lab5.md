@@ -62,3 +62,6 @@
 ### Удаление книги, которая имеет рецензию
 <video  muted controls  width="800" height="450" src = "videos/lab5/book3.mp4"></video>
 
+## Защита от SQL-инъекций
+  * Приведение **id** к целочисленному типу с помощью функции **settype($..., 'integer')**;
+  * Экранирование значений с помощью функции **mysqli_real_escape_string(...)**;
