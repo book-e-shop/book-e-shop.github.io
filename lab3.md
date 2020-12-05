@@ -68,9 +68,10 @@ function extractHeaders($htmlContent)
 
 ```
 
-*render_file.php*
+*toc_generator.php*
 
 ```php
+
 function set_id($text)
 {
     $htmlContent = mb_convert_encoding($text, 'HTML-ENTITIES', "UTF-8");
@@ -94,49 +95,21 @@ function set_id($text)
 
     return $text;
 }
-```
 
-*sitemap_generator.php*
-
-```php
-
-require_once "render_file.php";
-
-
-function generate_sitemap()
+function generate_toc($html)
 {
-    $not_indexing = [
-        "render_file.php", "sitemap_generator.php",
-        "404.php", "header.php", "footer.php",
-        "logout.php", "parser.php",
-        "signup.php", "signin.php",
-        "db.php", "sitemap.php"
-    ];
 
-    include getcwd() . '/parser.php';
-    $path = getcwd();
-
-
-    $files = scandir($path);
-    foreach ($files as $file) {
-
-        if (strpos($file, 'php') && in_array($file, $not_indexing) === false) {
-            echo "<h2>" . $file . "/<h2>";
-            echo "<ul class=\"list-group list-group-flush\">";
-            $html = render_file($file);
-
-
-            $links =  extractLinks($html);
-            foreach ($links as $value => $href) {
-                $a = "<a class='btn-link' href = '" . $href . "'>" . $value . "</a>";
-                echo "<li class=\"list-group-item\">" . $a . "</li>";
-            }
-            echo "</ul>";
-        }
+    $links =  extractHeaders($html);
+    echo "<h1>Содержание</h1>";
+    echo "<ul class='list-group'>";
+    foreach ($links as $id => $value) {
+        $a = "<a class='btn-link' href = '#" . $id . "'>" . $value . "</a>";
+        echo "<li class=\"list-group-item\">" . $a . "</li>";
     }
+    echo "</ul>";
 }
-
 ```
+
 ## Работающее решение в виде папки с файлами
 
 [Ссылка на репозиторий](https://github.com/book-e-shop/book-e-shop)
