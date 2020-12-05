@@ -32,26 +32,39 @@
 *parser.php*
 
 ```php
-function extractLinks($html)
+<?php
+
+function extractHeaders($htmlContent)
 {
+    $htmlContent = mb_convert_encoding($htmlContent, 'HTML-ENTITIES', "UTF-8");
+
     $htmlDom = new DOMDocument;
-    $extractedLinks = array();
+    @$htmlDom->loadHTML($htmlContent);
 
-    @$htmlDom->loadHTML($html);
-    $links = $htmlDom->getElementsByTagName('a');
+    $extractedHeaders = array();
 
-    foreach ($links as $link) {
+    $elements = $htmlDom->getElementsByTagName('*');
 
-        $linkText = $link->nodeValue;
-        $linkHref = $link->getAttribute('href');
+    $h_array = array('h1', 'h2', 'h3', 'h4', 'h5', 'h6');
 
-        if(strlen(trim($linkHref)) != 0 && $linkHref[0] != '#' && strlen(trim($linkText)) != 0) {
-            $extractedLinks[$linkText] = $linkHref;
-        }        
+    foreach ($elements as $element) {
+        if (in_array($element->tagName, $h_array)) {
+
+            $header_id = $element->getAttribute('id');
+            $header_text = $element->nodeValue;
+
+            if (strlen($header_id) > 0 && strlen($header_text) > 0)
+            {
+                $element->removeAttribute('id');
+                $extractedHeaders[$header_id] = $htmlDom->saveHtml($element);
+            }
+                
+        }
     }
 
-    return $extractedLinks;
+    return $extractedHeaders;
 }
+
 
 ```
 
