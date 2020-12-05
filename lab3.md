@@ -71,15 +71,29 @@ function extractHeaders($htmlContent)
 *render_file.php*
 
 ```php
-function render_file($path)
+function set_id($text)
 {
-    ob_start();
-    include($path);
-    $html = ob_get_contents();
-    ob_end_clean();
-    return $html;
-}
+    $htmlContent = mb_convert_encoding($text, 'HTML-ENTITIES', "UTF-8");
 
+    $htmlDom = new DOMDocument;
+    @$htmlDom->loadHTML($htmlContent);
+
+    $extractedHeaders = array();
+
+    for ($i = 1; $i < 7; $i++) {
+
+        $headers = $htmlDom->getElementsByTagName('h' . $i);
+        $j = 0;
+        foreach ($headers as $header) {
+
+            $header->setAttribute('id', 'h' . $i . '_' . $j);
+            $j++;
+        }
+    }
+    $text = $htmlDom->saveHTML();
+
+    return $text;
+}
 ```
 
 *sitemap_generator.php*
