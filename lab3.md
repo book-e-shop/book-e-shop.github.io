@@ -84,7 +84,7 @@ function extractHeaders($htmlContent)
 
 ```php
 
-function generate_toc($text)
+function set_id($text)
 {
     $htmlContent = mb_convert_encoding($text, 'HTML-ENTITIES', "UTF-8");
 
