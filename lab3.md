@@ -6,22 +6,34 @@
 
 ### Формулировка задачи
 
-> Построение карты сайта по всем страницам.
+> По выбранной рецензии строится содержание на основе заголовков от h1 до h6 с учетом иерархии.
 
-Файл *sitemap_generator.php* содержит функцию, которая выполняет построение сайта по всем файлам в корневой директории проекта. Последовательность действий следующая:
+#### Файл *parser.php*
 
-1. С помощью функции *scandir* выполняется перебор php-файлов в директории, полученной с помощью функции *getcwd*.
-2. Для исключения "системных" скриптов, используется массив *not_indexing*.
-3. С помощью функции *render_file*, из файла *render_file.php*, выполняется копирование содержимого внутреннего буфера загруженного php-файла в строковую переменную.
-4. Полученная строковая переменная передается в функцию *extractLinks*, которая возвращает ассоциативный массив, где ключ - текст, значение - адрес.
-5. По полученному массиву строится карта сайта.
-
-В файле *parser.php* содержится функция *extractLinks*, которая выполняет извлечение элементов с тегом **а** из содержимого html-страницы. Последовательность действий следующая:
+В файле *parser.php* содержится функция *extractHeaders*, которая выполняет извлечение элементов с тегами **h1,..., h6** из содержимого html-страницы, сохраняя их последовательность в тексте. Последовательность действий следующая:
 
 1. Загружаем содержимое html-страницы (аргумент функции) в экземпляр класса *DOMDocument*.
-2. Функцией *getElementsByTagName* извлекаем элементы с тегом **а**.
-3. Далее в цикле по выбранным элементам забираем текст и адрес ссылки, и заносим в ассоциативный массив.
-4. После завершения цикла возвращаем получившийся ассоциативный массив, где ключ - текст, значение - адрес.
+2. Функцией *getElementsByTagName* извлекаем все элементы.
+3. Далее в цикле по выбранным элементам проверяем что выбранный элемент относиться к тегам h1,...,h6. После этого забираем id и сам элемент, и заносим в ассоциативный массив.
+4. После завершения цикла возвращаем получившийся ассоциативный массив, где ключ - id, значение - элемент с тегом h.
+
+
+#### Файл *toc_generator.php*
+
+Файл *toc_generator.php* содержит две функции: set_id и toc_generator.
+
+Функция **set_id** добавляет ко всем **h1,..., h6** уникальный id.
+Последовательность действий следующая:
+1. С помощью функции getElementsByTagName() получаем все заголовки, соответствующие тегам h1, h2, h3, h4, h5, h6.
+2. С помощью функции setAttribute('id', 'h' . $i . '_' . $j) присваиваем заголовкам атрибут id. id имеет вид **h**i_j, где i - это уровень тега, а j - уникальный номер заголовка для тега **h**i.
+
+Функция **toc_generator** строит содержание рецензии по всем найденным заголовкам h1,...,h6 с добавленными якорями.
+Последовательность действий следующая:
+1. Перебираем в цикле все извлеченные теги **h1,..., h6** по порядку.
+2. Извлекаем число, соответствующее уровню тега (например, для h1 это число 1). Также, на каждом проходе цикле запоминается предыдущий уровень.
+3. Если следующий уровень меньше предыдущего, открываем список ul и вставляем тег h1 как элемент списка.
+4. Если следующий уровень равен предущего, просто вставляем тег h1 как элемент списка.
+5. Если следующий уровень больше предыдущего, закрываем количество уровней, равное разности между предыдущим и следующим, а затем вставляем тег h1 как элемент списка.
 
 ## Тестовый пример со скриншотом
 
@@ -32,84 +44,84 @@
 *parser.php*
 
 ```php
-function extractLinks($html)
+<?php
+
+function extractHeaders($htmlContent)
 {
+    $htmlContent = mb_convert_encoding($htmlContent, 'HTML-ENTITIES', "UTF-8");
+
     $htmlDom = new DOMDocument;
-    $extractedLinks = array();
+    @$htmlDom->loadHTML($htmlContent);
 
-    @$htmlDom->loadHTML($html);
-    $links = $htmlDom->getElementsByTagName('a');
+    $extractedHeaders = array();
 
-    foreach ($links as $link) {
+    $elements = $htmlDom->getElementsByTagName('*');
 
-        $linkText = $link->nodeValue;
-        $linkHref = $link->getAttribute('href');
+    $h_array = array('h1', 'h2', 'h3', 'h4', 'h5', 'h6');
 
-        if(strlen(trim($linkHref)) != 0 && $linkHref[0] != '#' && strlen(trim($linkText)) != 0) {
-            $extractedLinks[$linkText] = $linkHref;
-        }        
-    }
+    foreach ($elements as $element) {
+        if (in_array($element->tagName, $h_array)) {
 
-    return $extractedLinks;
-}
+            $header_id = $element->getAttribute('id');
+            $header_text = $element->nodeValue;
 
-```
-
-*render_file.php*
-
-```php
-function render_file($path)
-{
-    ob_start();
-    include($path);
-    $html = ob_get_contents();
-    ob_end_clean();
-    return $html;
-}
-
-```
-
-*sitemap_generator.php*
-
-```php
-
-require_once "render_file.php";
-
-
-function generate_sitemap()
-{
-    $not_indexing = [
-        "render_file.php", "sitemap_generator.php",
-        "404.php", "header.php", "footer.php",
-        "logout.php", "parser.php",
-        "signup.php", "signin.php",
-        "db.php", "sitemap.php"
-    ];
-
-    include getcwd() . '/parser.php';
-    $path = getcwd();
-
-
-    $files = scandir($path);
-    foreach ($files as $file) {
-
-        if (strpos($file, 'php') && in_array($file, $not_indexing) === false) {
-            echo "<h2>" . $file . "/<h2>";
-            echo "<ul class=\"list-group list-group-flush\">";
-            $html = render_file($file);
-
-
-            $links =  extractLinks($html);
-            foreach ($links as $value => $href) {
-                $a = "<a class='btn-link' href = '" . $href . "'>" . $value . "</a>";
-                echo "<li class=\"list-group-item\">" . $a . "</li>";
+            if (strlen($header_id) > 0 && strlen($header_text) > 0)
+            {
+                $element->removeAttribute('id');
+                $extractedHeaders[$header_id] = $htmlDom->saveHtml($element);
             }
-            echo "</ul>";
+                
         }
     }
+
+    return $extractedHeaders;
 }
 
+
 ```
+
+*toc_generator.php*
+
+```php
+
+function set_id($text)
+{
+    $htmlContent = mb_convert_encoding($text, 'HTML-ENTITIES', "UTF-8");
+
+    $htmlDom = new DOMDocument;
+    @$htmlDom->loadHTML($htmlContent);
+
+    $extractedHeaders = array();
+
+    for ($i = 1; $i < 7; $i++) {
+
+        $headers = $htmlDom->getElementsByTagName('h' . $i);
+        $j = 0;
+        foreach ($headers as $header) {
+
+            $header->setAttribute('id', 'h' . $i . '_' . $j);
+            $j++;
+        }
+    }
+    $text = $htmlDom->saveHTML();
+
+    return $text;
+}
+
+function generate_toc($html)
+{
+
+    $links =  extractHeaders($html);
+    echo "<h1>Содержание</h1>";
+    echo "<ul class='list-group'>";
+    foreach ($links as $id => $value) {
+        $a = "<a class='btn-link' href = '#" . $id . "'>" . $value . "</a>";
+        echo "<li class=\"list-group-item\">" . $a . "</li>";
+    }
+    echo "</ul>";
+}
+```
+
 ## Работающее решение в виде папки с файлами
 
 [Ссылка на репозиторий](https://github.com/book-e-shop/book-e-shop)
