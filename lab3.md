@@ -146,8 +146,9 @@ function generate_toc($html)
 
 ## Работающее решение в виде папки с файлами
 
-[Ссылка на репозиторий](https://github.com/book-e-shop/book-e-shop)
+[Ссылка на репозиторий](https://github.com/book-e-shop/book-e-shop/tree/297c125aba41d9a5fc465d7508960a63f9562f2f)
+[Ссылка на дамп базы] (https://github.com/book-e-shop/book-e-shop/blob/master/book_shop%20%D0%9B%D0%A0%203.sql)
 
 ## Скринкаст работы решения
 
-<!-- <video autoplay muted  loop width="800" height="450" src = "videos/lab3/1.mp4"></video>
+<video  muted control  loop width="800" height="450" src = "videos/lab3/1.mp4"></video>
