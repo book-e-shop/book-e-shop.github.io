@@ -152,4 +152,4 @@ function generate_toc($html)
 
 ## Скринкаст работы решения
 
-<video  muted control width="800" height="450" src = "videos/lab3/1.mp4"></video>
+<video  muted controls width="800" height="450" src = "videos/lab3/1.mp4"></video>
