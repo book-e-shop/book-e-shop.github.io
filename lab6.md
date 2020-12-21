@@ -73,3 +73,25 @@ JS скрипт **ajax_search.js** получает введенный в пол
 
 Сценарии работы с Google Книги
 1. Используя [Google Books APIs](https://www.google.com/books/jsapi.js) выводится фрагмент книги. Поиск осуществляется по ISBN. Для отображения фрагмента используется Embedded Viewer API.
+2. Если книга с заданным ISBN отсутствует в библиотеке Google Книг, то выводится сообщение "Фрагмент не найден".
+
+```
+<script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
+            <script type="text/javascript">
+                google.books.load();
+
+                function alertInitialized() {
+                    $("#viewerCanvas").html("<h4>Фрагмент не найден</h4>")
+                    $("#viewerCanvas").height(10);
+
+                }
+
+                function initialize() {
+                    var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
+                    viewer.load("<?php echo "ISBN:" . str_replace("-", "", $book['ISBN']); ?>", alertInitialized);
+                }
+
+                google.books.setOnLoadCallback(initialize);
+</script>
+            <div id="viewerCanvas" style="width: 100%; height: 50vh;text-align: center;"></div>
+```
