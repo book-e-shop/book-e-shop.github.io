@@ -59,7 +59,7 @@ JS скрипт **ajax_search.js** получает введенный в пол
 Результаты поиска сортируются в порядке убывания по величине релевантности, т.е. по степени сходства между строкой поиска и текстом. Это происходит благодаря применению MATCH() несколько раз. Также, применяется поиск в логическом режиме с использованием модификатора IN BOOLEAN MODE с целью поиска результатов по части слова.
 
 #### Скринкаст работы поиска
-<video  muted controls  width="800" height="450" src = "videos/lab6/search.mkv"></video>
+<video  muted controls  width="800" height="450" src = "videos/lab6/search.mp4"></video>
 
 ### Интеграция с внешним сервисом Яндекс.Спеллер  
 
@@ -73,7 +73,7 @@ JS скрипт **ajax_search.js** получает введенный в пол
 4. Полученный ответ отправляется клиенту, где с помощью библиотеки [Mark.js](https://markjs.io/) происходит подсветка найденных ошибок.
 
 #### Скринкаст работы c Яндекс.Спеллер 
-<video  muted controls  width="800" height="450" src = "videos/lab6/speller.mkv"></video>
+<video  muted controls  width="800" height="450" src = "videos/lab6/speller.mp4"></video>
 
 ### Интеграция с внешним сервисом Google Книги  
 
@@ -102,5 +102,5 @@ JS скрипт **ajax_search.js** получает введенный в пол
 <div id="viewerCanvas" style="width: 100%; height: 50vh;text-align: center;"></div>
 ```
 #### Скринкаст работы c Google Книги  
-<video  muted controls  width="800" height="450" src = "videos/lab6/gbook.mkv"></video>
+<video  muted controls  width="800" height="450" src = "videos/lab6/gbook.mp4"></video>
 
