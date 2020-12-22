@@ -1,6 +1,6 @@
 # Лабораторная работа 6. Собственная регистрация, поиск, авторизация через таблицу users, внешняя авторизация, внешняя интеграция.
 
-[Ссылка на github (дамп базы там же)](https://github.com/book-e-shop/book-e-shop/tree/53692611483e1467218d63ab81dd8dd28bddb040)
+[Ссылка на github (дамп базы там же)](https://github.com/book-e-shop/book-e-shop/tree/b6e664d21f282d676c80982f6453f6e2cd22ff95)
 
 ## [Структура данных](https://github.com/book-e-shop/book-e-shop.github.io/blob/master/img/lab5/db.png)
 
