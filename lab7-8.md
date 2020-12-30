@@ -4,7 +4,7 @@
 
 ## [Структура данных](https://github.com/book-e-shop/book-e-shop.github.io/blob/master/img/lab5/db.png)
 
-<img  src = "img/lab5/db.png">
+<img  src = "img/lab7-8/db.png">
 
 ## Сценарии работы и представления
 
